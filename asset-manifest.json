@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/SlimMom/static/css/main.7acaea2f.css",
+    "main.js": "/SlimMom/static/js/main.07d3183d.js",
+    "index.html": "/SlimMom/index.html",
+    "main.7acaea2f.css.map": "/SlimMom/static/css/main.7acaea2f.css.map",
+    "main.07d3183d.js.map": "/SlimMom/static/js/main.07d3183d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.07d3183d.js"
+  ]
+}
