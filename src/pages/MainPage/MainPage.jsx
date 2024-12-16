@@ -1,3 +1,5 @@
+import { DailyCaloriesForm } from 'components/DailyCaloriesForm/DailyCaloriesForm';
+
 export const MainPage = () => {
-  return <p>Main Page</p>;
+  return <DailyCaloriesForm />;
 };
