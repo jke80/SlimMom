@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import authSlice from './auth/auth.slice';
+import { authReducer } from './auth/authSlice';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
@@ -9,5 +9,5 @@ const persistConfig = {
   whitelist: ['token'],
 };
 export const rootReducer = combineReducers({
-  auth: persistReducer(persistConfig, authSlice),
+  auth: persistReducer(persistConfig, authReducer),
 });

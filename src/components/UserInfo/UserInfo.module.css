@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+}
+.userName {
+  font-family: Verdana;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17.01px;
+  letter-spacing: 0.04em;
+  text-align: right;
+  position: relative;
+  margin-right: 40px;
+}
+
+.userName::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 32px;
+  border: 1px solid rgba(224, 224, 224, 1);
+}
+
+.exitButton {
+  font-family: Verdana;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17.01px;
+  letter-spacing: 0.04em;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+
+  transition: color var(--page-transition);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}

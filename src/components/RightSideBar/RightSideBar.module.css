@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(240, 241, 243, 1);
+  width: 517px;
+  height: 850px;
+
+  padding-top: 80px;
+  padding-right: 16px;
+  align-items: end;
+}
+.summaryContainer {
+  align-self: center;
+}

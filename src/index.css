@@ -14,6 +14,7 @@ body {
 }
 
 h1 {
+  margin: 0;
   font-size: 34px;
   font-weight: 700;
   line-height: 47.6px;
@@ -65,15 +66,3 @@ a {
     color: var(--font-color);
   } */
 /* } */
-input {
-  border: none;
-  outline: none;
-  box-shadow: none;
-  width: 50px;
-}
-
-label {
-  height: 36px;
-  width: 240px;
-  border-bottom: 1px solid rgba(224, 224, 224, 1);
-}

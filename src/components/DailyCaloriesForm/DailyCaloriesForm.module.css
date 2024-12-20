@@ -1,5 +1,7 @@
-h1 {
+.dailyCaloriesFormTitle {
   width: 608px;
+  margin-top: 144px;
+  margin-bottom: 68px;
 }
 
 .inputsContainer {
@@ -7,21 +9,90 @@ h1 {
   gap: 30px;
 }
 
-.rightSideInputs {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
 .leftSideInputs {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+}
+.rightSideInputs {
+  display: flex;
+  flex-direction: column;
+}
+.formInput {
+  font-family: Verdana;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17.01px;
+  letter-spacing: 0.04em;
+
+  border: none;
+  outline: none;
+  box-shadow: none;
+  width: 240px;
+  height: 36px;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+
+  &::placeholder {
+    color: rgba(155, 159, 170, 1);
+  }
+}
+.bloodTypeTitle {
+  margin: 0;
+  font-weight: 700;
+  width: 240px;
+  height: 36px;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
 }
 .bloodTypeContainer {
   display: flex;
+  gap: 13px;
 }
+/* Скрываем стандартные радио-кнопки */
+.bloodTypeInput {
+  display: none;
+} /* Стилизация меток */
 
-.formButton {
+.bloodTypeLabel {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
+  margin-right: 15px;
+  font-size: 14px;
+  font-weight: 400;
+} /* Создание кастомного круга для радио-кнопки */
+.bloodTypeLabel::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(224, 224, 224, 1); /*Цвет рамки круга  */
+  border-radius: 50%;
+  background: white;
+} /* Стилизация выбранного состояния */
+/* .bloodTypeInput:checked + .bloodTypeLabel::before {
+  /* background: #007bff; Цвет круга при выборе */
+/* border: 2px solid #fc842d; */
+
+/* Круг внутри выбранной радио-кнопки */
+.bloodTypeInput:checked + .bloodTypeLabel::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: #fc842d; /* Цвет внутреннего круга */
+  border-radius: 50%;
+}
+.bloodTypeInput:checked + .bloodTypeLabel {
+  font-weight: 700;
+  color: #fc842d;
+}
+/* .formButton {
   color: var(--accent-color);
   background-color: var(--button-font-color);
   font-family: var(--primary-font);
@@ -44,7 +115,7 @@ h1 {
     background-color: var(--accent-color);
     box-shadow: 0px 4px 10px 0px rgba(252, 132, 45, 0.5);
   }
-}
+} */
 .submitFormButton {
   margin-top: 60px;
   margin-left: 323px;

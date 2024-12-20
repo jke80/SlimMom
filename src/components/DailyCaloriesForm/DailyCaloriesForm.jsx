@@ -2,6 +2,7 @@ import { Modal } from 'components/Modal/Modal';
 import { useState } from 'react';
 import { DailyCaloriesIntake } from 'components/DailyCaloriesIntake/DailyCaloriesIntake';
 import css from './DailyCaloriesForm.module.css';
+import { Button } from 'components/Button/Button';
 
 export const DailyCaloriesForm = () => {
   const [state, setState] = useState({
@@ -39,105 +40,122 @@ export const DailyCaloriesForm = () => {
   };
   return (
     <>
+      <h1 className={css.dailyCaloriesFormTitle}>
+        Calculate your daily calorie intake right now
+      </h1>
       <form name="daily_calories_form" onSubmit={handleSubmit}>
-        <h1>Calculate your daily calorie intake right now</h1>
         <div className={css.inputsContainer}>
           <div className={css.leftSideInputs}>
-            <label>
-              Height(cm)*
-              <input
-                name="height"
-                value={state.height}
-                onChange={handleChange}
-                required
-              />
-            </label>
-            <label>
-              Age*
-              <input
-                name="age"
-                value={state.age}
-                onChange={handleChange}
-                required
-              />
-            </label>
-            <label>
-              Current weight(kg)*
-              <input
-                name="currentWeight"
-                value={state.currentWeight}
-                onChange={handleChange}
-                required
-              />
-            </label>
+            <input
+              className={css.formInput}
+              placeholder="Height (cm)*"
+              name="height"
+              value={state.height}
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              className={css.formInput}
+              placeholder="Age*"
+              name="age"
+              value={state.age}
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              className={css.formInput}
+              placeholder="Current weight(kg)*"
+              name="currentWeight"
+              value={state.currentWeight}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className={css.rightSideInputs}>
-            <label>
-              Desired weight(kg)*
+            <input
+              className={css.formInput}
+              placeholder="Desired weight(kg)*"
+              name="desiredWeight"
+              value={state.desiredWeight}
+              onChange={handleChange}
+              required
+            />
+            <p className={css.bloodTypeTitle}>Blood Type*</p>
+            <div className={css.bloodTypeContainer}>
               <input
-                name="desiredWeight"
-                value={state.desiredWeight}
+                id="bloodType1"
+                className={css.bloodTypeInput}
+                type="radio"
+                name="bloodType"
+                value="1"
                 onChange={handleChange}
-                required
               />
-            </label>
-            <div className="bloodTypeContainer">
-              <p>Blood Type*</p>
-              <label>
+              <label htmlFor="bloodType1" className={css.bloodTypeLabel}>
                 1
-                <input
-                  defaultChecked={true}
-                  type="radio"
-                  name="bloodType"
-                  value="1"
-                  onChange={handleChange}
-                />
               </label>
-              <label>
+
+              <input
+                id="bloodType2"
+                className={css.bloodTypeInput}
+                type="radio"
+                name="bloodType"
+                value="2"
+                onChange={handleChange}
+              />
+              <label htmlFor="bloodType2" className={css.bloodTypeLabel}>
                 2
-                <input
-                  type="radio"
-                  name="bloodType"
-                  value="2"
-                  onChange={handleChange}
-                />
               </label>
-              <label>
+
+              <input
+                id="bloodType3"
+                className={css.bloodTypeInput}
+                type="radio"
+                name="bloodType"
+                value="3"
+                onChange={handleChange}
+              />
+              <label htmlFor="bloodType3" className={css.bloodTypeLabel}>
                 3
-                <input
-                  type="radio"
-                  name="bloodType"
-                  value="3"
-                  onChange={handleChange}
-                />
               </label>
-              <label>
+
+              <input
+                id="bloodType4"
+                className={css.bloodTypeInput}
+                type="radio"
+                name="bloodType"
+                value="4"
+                onChange={handleChange}
+              />
+              <label htmlFor="bloodType4" className={css.bloodTypeLabel}>
                 4
-                <input
-                  type="radio"
-                  name="bloodType"
-                  value="4"
-                  onChange={handleChange}
-                />
               </label>
             </div>
           </div>
         </div>
-        <button
+        <Button type="submit" className={css.submitFormButton}>
+          Start losing weight
+        </Button>
+
+        {/* <button
           type="submit"
           className={`${css.formButton} ${css.submitFormButton}`}
         >
           Start losing weight
-        </button>
+        </button> */}
       </form>
       <Modal isOpen={isModalOpen} onClose={onModalClose}>
         <DailyCaloriesIntake
           dailyCalories={state.dailyCalories}
           bloodType={state.bloodType}
         />
-        <button type="button" className={css.formButton} onClick={onModalClose}>
+        {/* <button type="button" className={css.formButton} onClick={onModalClose}>
           Start losing weight
-        </button>
+        </button> */}
+        <Button type="button" onClick={onModalClose}>
+          Start losing weight
+        </Button>
       </Modal>
     </>
   );

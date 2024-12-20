@@ -7,8 +7,22 @@ import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
 import { DiaryPage } from 'pages/DiaryPage/DiaryPage';
 import { LoginPage } from 'pages/LoginPage/LoginPage';
 import { RegistrationPage } from 'pages/RegistrationPage/RegistrationPage';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectIsRefreshing, selectToken } from '../redux/auth/authSelectors';
+import { useEffect } from 'react';
+import { authCurrent } from '../redux/auth/authSlice';
 
 export const App = () => {
+  const token = useSelector(selectToken);
+  const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
+
+  useEffect(() => {
+    if (isRefreshing) return;
+    if (token === 'token')
+      dispatch(authCurrent({ name: 'Евгений', email: 'kolomoycev@gmail.com' }));
+  }, [dispatch, isRefreshing, token]);
+
   return (
     <Routes>
       <Route path="/SlimMom/" element={<Layout />}>
