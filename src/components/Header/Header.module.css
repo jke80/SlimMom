@@ -1,3 +1,27 @@
 .container {
   display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(224, 224, 224, 1);
+  padding-bottom: 13px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 0px;
+    border-bottom: none;
+    justify-content: start;
+    gap: 40px;
+  }
 }

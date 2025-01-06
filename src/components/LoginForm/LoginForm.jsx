@@ -1,9 +1,10 @@
 import { useState } from 'react';
-// import css from './LoginForm.module.css';
+import css from './LoginForm.module.css';
 import { useDispatch } from 'react-redux';
 import { authLogin } from '../../redux/auth/authSlice';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'components/Button/Button';
+import { FloatLabelInput } from 'components/Input/FloatingLabelInput';
 
 export const LoginForm = () => {
   const [state, setState] = useState({ email: '', password: '' });
@@ -24,30 +25,41 @@ export const LoginForm = () => {
   };
 
   return (
-    <>
-      <h1>Log In</h1>
+    <div className={css.container}>
+      <h1 className={css.title}>Log In</h1>
       <form name="login_form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="email*"
-          name="email"
-          value={state.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Password*"
-          name="password"
-          value={state.password}
-          onChange={handleChange}
-          required
-        />
-        <Button type="submit">Log In</Button>
-        <Button type="button" onClick={() => navigate('/SlimMom/register')}>
-          Register
-        </Button>
+        <div className={css.inputContainer}>
+          <FloatLabelInput
+            id="email"
+            name="email"
+            value={state.email}
+            onChange={handleChange}
+            required
+            label="Email *"
+          />
+          <FloatLabelInput
+            id="password"
+            name="password"
+            value={state.password}
+            onChange={handleChange}
+            required
+            label="Password *"
+          />
+        </div>
+
+        <div className={css.buttonsContainer}>
+          <Button type="submit" className={css.button}>
+            Log In
+          </Button>
+          <Button
+            type="button"
+            className={css.button}
+            onClick={() => navigate('/SlimMom/register')}
+          >
+            Register
+          </Button>
+        </div>
       </form>
-    </>
+    </div>
   );
 };

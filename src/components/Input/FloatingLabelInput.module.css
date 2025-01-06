@@ -1,0 +1,46 @@
+.container {
+  position: relative;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+  padding-bottom: 8px;
+  padding-top: 32px;
+}
+
+.input {
+  font-family: Verdana;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17.01px;
+  letter-spacing: 0.04em;
+  width: 100%;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: none;
+  z-index: 1;
+  color: var(--accent-color);
+}
+
+.label {
+  position: absolute;
+  bottom: 20px;
+  font-family: Verdana;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17.01px;
+  letter-spacing: 0.04em;
+
+  color: rgba(155, 159, 170, 1);
+  pointer-events: none;
+  transition: 250 ms var(--page-transition);
+}
+
+.input:focus ~ .label,
+.filled ~ .label {
+  bottom: 37px;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    padding-bottom: 20px;
+    padding-top: 40px;
+  }
+}

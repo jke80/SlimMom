@@ -1,4 +1,22 @@
 .navContainer {
   display: flex;
   gap: 24px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+@media screen and (min-width: 1200px) {
+  .navContainer {
+    align-items: flex-end;
+  }
+
+  .navContainer::after {
+    content: '';
+    position: absolute;
+    left: -20px;
+    width: 0;
+    height: 32px;
+    border: 1px solid rgba(224, 224, 224, 1);
+  }
 }

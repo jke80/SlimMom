@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { authLogin, authRegister } from '../../redux/auth/authSlice';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'components/Button/Button';
+import css from './RegistrationForm.module.css';
+import { FloatLabelInput } from 'components/Input/FloatingLabelInput';
 
 export const RegistrationForm = () => {
   const [state, setState] = useState({ name: '', email: '', password: '' });
@@ -28,43 +30,44 @@ export const RegistrationForm = () => {
   };
 
   return (
-    <>
-      <h1>Register</h1>
+    <div className={css.container}>
+      <h1 className={css.title}>Register</h1>
       <form name="registration_form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="name*"
-          name="name"
-          value={state.name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          placeholder="email*"
-          name="email"
-          value={state.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Password*"
-          name="password"
-          value={state.password}
-          onChange={handleChange}
-          required
-        />
-
-        <Button type="submit">Register</Button>
-        <Button type="button" onClick={handleClick}>
-          Log In
-        </Button>
-        {/* <button type="submit">Register</button>
-        <button type="button" onClick={handleClick}>
-          Log In
-        </button> */}
+        <div className={css.inputContainer}>
+          <FloatLabelInput
+            id="name"
+            name="name"
+            value={state.name}
+            onChange={handleChange}
+            required
+            label="Name *"
+          />
+          <FloatLabelInput
+            id="email"
+            name="email"
+            value={state.email}
+            onChange={handleChange}
+            required
+            label="Email *"
+          />
+          <FloatLabelInput
+            id="password"
+            name="password"
+            value={state.password}
+            onChange={handleChange}
+            required
+            label="Password *"
+          />
+        </div>
+        <div className={css.buttonsContainer}>
+          <Button type="submit" className={css.button}>
+            Register
+          </Button>
+          <Button type="button" className={css.button} onClick={handleClick}>
+            Log In
+          </Button>
+        </div>
       </form>
-    </>
+    </div>
   );
 };

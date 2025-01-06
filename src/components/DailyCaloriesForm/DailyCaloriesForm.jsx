@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { DailyCaloriesIntake } from 'components/DailyCaloriesIntake/DailyCaloriesIntake';
 import css from './DailyCaloriesForm.module.css';
 import { Button } from 'components/Button/Button';
+import { FloatLabelInput } from 'components/Input/FloatingLabelInput';
 
 export const DailyCaloriesForm = () => {
   const [state, setState] = useState({
@@ -39,49 +40,48 @@ export const DailyCaloriesForm = () => {
     setIsModalOpen(false);
   };
   return (
-    <>
+    <div className={css.container}>
       <h1 className={css.dailyCaloriesFormTitle}>
         Calculate your daily calorie intake right now
       </h1>
       <form name="daily_calories_form" onSubmit={handleSubmit}>
         <div className={css.inputsContainer}>
           <div className={css.leftSideInputs}>
-            <input
-              className={css.formInput}
-              placeholder="Height (cm)*"
+            <FloatLabelInput
+              id="height"
               name="height"
               value={state.height}
               onChange={handleChange}
               required
+              label="Height*"
             />
-
-            <input
-              className={css.formInput}
-              placeholder="Age*"
+            <FloatLabelInput
+              id="age"
               name="age"
               value={state.age}
               onChange={handleChange}
               required
+              label="Age*"
             />
-
-            <input
-              className={css.formInput}
-              placeholder="Current weight(kg)*"
+            <FloatLabelInput
+              id="currentWeight"
               name="currentWeight"
               value={state.currentWeight}
               onChange={handleChange}
               required
+              label="Current Weight*"
             />
           </div>
           <div className={css.rightSideInputs}>
-            <input
-              className={css.formInput}
-              placeholder="Desired weight(kg)*"
+            <FloatLabelInput
+              id="desiredWeight"
               name="desiredWeight"
               value={state.desiredWeight}
               onChange={handleChange}
               required
+              label="Desired Weight (kg) *"
             />
+
             <p className={css.bloodTypeTitle}>Blood Type*</p>
             <div className={css.bloodTypeContainer}>
               <input
@@ -137,26 +137,17 @@ export const DailyCaloriesForm = () => {
         <Button type="submit" className={css.submitFormButton}>
           Start losing weight
         </Button>
-
-        {/* <button
-          type="submit"
-          className={`${css.formButton} ${css.submitFormButton}`}
-        >
-          Start losing weight
-        </button> */}
       </form>
+
       <Modal isOpen={isModalOpen} onClose={onModalClose}>
         <DailyCaloriesIntake
           dailyCalories={state.dailyCalories}
           bloodType={state.bloodType}
         />
-        {/* <button type="button" className={css.formButton} onClick={onModalClose}>
-          Start losing weight
-        </button> */}
         <Button type="button" onClick={onModalClose}>
           Start losing weight
         </Button>
       </Modal>
-    </>
+    </div>
   );
 };
