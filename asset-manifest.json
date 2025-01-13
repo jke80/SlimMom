@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.css": "/SlimMom/static/css/main.9d6ad6b6.css",
-    "main.js": "/SlimMom/static/js/main.da243fff.js",
+    "main.css": "/SlimMom/static/css/main.b3dcd94b.css",
+    "main.js": "/SlimMom/static/js/main.20e8df1d.js",
     "static/media/logo_desktop.svg": "/SlimMom/static/media/logo_desktop.e62d1bec6b77fd08789e717f9b333d54.svg",
     "static/media/logo_tablet.svg": "/SlimMom/static/media/logo_tablet.faba4e2df73d8c3c19f741a0c88e405c.svg",
     "static/media/logo_mobile.svg": "/SlimMom/static/media/logo_mobile.3b43297dab86a7fd1cb8579a81bf772f.svg",
     "index.html": "/SlimMom/index.html",
-    "static/media/close_button.svg": "/SlimMom/static/media/close_button.37ef7091c2cd41d363d921386fc80858.svg",
-    "main.9d6ad6b6.css.map": "/SlimMom/static/css/main.9d6ad6b6.css.map",
-    "main.da243fff.js.map": "/SlimMom/static/js/main.da243fff.js.map"
+    "static/media/close_icon.svg": "/SlimMom/static/media/close_icon.37ef7091c2cd41d363d921386fc80858.svg",
+    "static/media/calendar_icon.svg": "/SlimMom/static/media/calendar_icon.d6855d68f19397daf1156cfb9b9b952e.svg",
+    "static/media/menu_icon.svg": "/SlimMom/static/media/menu_icon.bfd692e5aa4d68a84949b4312089cd15.svg",
+    "static/media/back_icon.svg": "/SlimMom/static/media/back_icon.cf64bd88f4d02c92ce401de4dd9c0f4c.svg",
+    "main.b3dcd94b.css.map": "/SlimMom/static/css/main.b3dcd94b.css.map",
+    "main.20e8df1d.js.map": "/SlimMom/static/js/main.20e8df1d.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d6ad6b6.css",
-    "static/js/main.da243fff.js"
+    "static/css/main.b3dcd94b.css",
+    "static/js/main.20e8df1d.js"
   ]
 }
