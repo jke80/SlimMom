@@ -32,26 +32,15 @@
   gap: 40px;
   padding-top: 60px;
 }
-.menuItemButton {
+
+.navLink {
+  text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
   font-family: Verdana;
-  letter-spacing: 0.04em;
   font-size: 18px;
   line-height: 21.88px;
-  text-align: center;
+  letter-spacing: 0.04em;
   color: rgba(255, 255, 255, 1);
-  background-color: transparent;
-  cursor: pointer;
-  outline: none;
-  border: none;
-
-  transition: color var(--page-transition);
-  &:hover,
-  &:focus {
-    color: var(--primery-font-color);
-  }
-}
-.active {
-  color: var(--primery-font-color);
+  text-align: center;
 }

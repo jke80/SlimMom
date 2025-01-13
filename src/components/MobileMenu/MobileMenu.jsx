@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { ReactComponent as MenuIcon } from '../../images/menu_icon.svg';
 import { ReactComponent as CloseIcon } from '../../images/close_icon.svg';
 import { UserInfo } from 'components/UserInfo/UserInfo';
@@ -14,11 +14,14 @@ export const MobileMenu = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const isTablet = useMediaQuery({ query: SCREEN_SIZE.TABLET });
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
 
   const handleButtonClick = e => {
     isOpen ? setIsOpen(false) : setIsOpen(true);
   };
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
 
   return (
     <div className={css.container}>
@@ -32,32 +35,12 @@ export const MobileMenu = () => {
       </button>
       {isOpen && (
         <div className={css.menuContainer}>
-          <button
-            type="button"
-            className={`${css.menuItemButton} ${
-              location.pathname === '/SlimMom/diary' && css.active
-            }`}
-            onClick={() => {
-              navigate('/SlimMom/diary');
-              setIsOpen(false);
-              console.log(location.pathname);
-            }}
-          >
+          <NavLink className={css.navLink} to="/SlimMom/diary">
             diary
-          </button>
-          <button
-            type="button"
-            className={`${css.menuItemButton} ${
-              location.pathname === '/SlimMom/calculator' && css.active
-            }`}
-            onClick={() => {
-              navigate('/SlimMom/calculator');
-              setIsOpen(false);
-              console.log(location.pathname);
-            }}
-          >
+          </NavLink>
+          <NavLink className={css.navLink} to="/SlimMom/calculator">
             calculator
-          </button>
+          </NavLink>
         </div>
       )}
     </div>
