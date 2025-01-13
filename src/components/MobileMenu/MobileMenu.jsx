@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { ReactComponent as MenuIcon } from '../../images/menu_icon.svg';
 import { ReactComponent as CloseIcon } from '../../images/close_icon.svg';
 import { UserInfo } from 'components/UserInfo/UserInfo';
@@ -15,10 +15,6 @@ export const MobileMenu = () => {
   const isTablet = useMediaQuery({ query: SCREEN_SIZE.TABLET });
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleButtonClick = e => {
-    isOpen ? setIsOpen(false) : setIsOpen(true);
-  };
-
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
@@ -26,7 +22,11 @@ export const MobileMenu = () => {
   return (
     <div className={css.container}>
       {isTablet && isLoggedIn && <UserInfo />}
-      <button type="button" className={css.button} onClick={handleButtonClick}>
+      <button
+        type="button"
+        className={css.button}
+        onClick={() => setIsOpen(!isOpen)}
+      >
         {!isOpen ? (
           <MenuIcon width="24" height="24" />
         ) : (
