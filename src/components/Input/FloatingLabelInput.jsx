@@ -1,5 +1,6 @@
 import css from './FloatingLabelInput.module.css';
 import { useState } from 'react';
+
 export const FloatLabelInput = props => {
   const [focus, setFocus] = useState(false);
 

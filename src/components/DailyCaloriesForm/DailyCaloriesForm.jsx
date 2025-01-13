@@ -144,7 +144,11 @@ export const DailyCaloriesForm = () => {
           dailyCalories={state.dailyCalories}
           bloodType={state.bloodType}
         />
-        <Button type="button" onClick={onModalClose}>
+        <Button
+          type="button"
+          className={css.modalButton}
+          onClick={onModalClose}
+        >
           Start losing weight
         </Button>
       </Modal>

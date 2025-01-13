@@ -9,22 +9,22 @@ export const Navigation = () => {
   return (
     <nav className={css.navContainer}>
       {!isLoggedIn && (
-        <NavLink to="/SlimMom/login" className={css.navLink}>
+        <NavLink className={css.navLink} to="/SlimMom/login">
           log in
         </NavLink>
       )}
       {!isLoggedIn && (
-        <NavLink to="/SlimMom/register" className={css.navLink}>
+        <NavLink className={css.navLink} to="/SlimMom/register">
           registration
         </NavLink>
       )}
       {isLoggedIn && (
-        <NavLink to="/SlimMom/diary" className={css.navLink}>
+        <NavLink className={css.navLink} to="/SlimMom/diary">
           diary
         </NavLink>
       )}
       {isLoggedIn && (
-        <NavLink to="/SlimMom/calculator" className={css.navLink}>
+        <NavLink className={css.navLink} to="/SlimMom/calculator">
           calculator
         </NavLink>
       )}

@@ -1,13 +1,16 @@
 import { UserInfo } from 'components/UserInfo/UserInfo';
 import css from './RightSideBar.module.css';
-import { formattedDate } from 'utils/formattedDate';
-console.log(formattedDate);
+import { useSelector } from 'react-redux';
+import { selectDiaryDate } from '../../redux/diaryDate/diaryDateSelector';
+
 export const RightSideBar = () => {
+  const diaryDate = useSelector(selectDiaryDate);
+
   return (
     <div className={css.container}>
       <UserInfo />
       <div className={css.summaryContainer}>
-        <p>Summary for {formattedDate}</p>
+        <p>Summary for {diaryDate}</p>
         <ul>
           <li>
             <p>Left</p>

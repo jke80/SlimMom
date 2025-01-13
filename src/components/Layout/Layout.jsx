@@ -10,11 +10,10 @@ export const Layout = () => {
 
   return (
     <div className={css.container}>
-      <div className={css.leftSideContainer}>
+      <div>
         <Header />
         <Outlet />
       </div>
-
       {isLoggedIn && <RightSideBar />}
     </div>
   );

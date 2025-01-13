@@ -1,3 +1,9 @@
+import { DiaryDateCalendar } from 'components/DiaryDateCalendar/DiaryDateCalendar';
+
 export const DiaryPage = () => {
-  return <p>Diary page</p>;
+  return (
+    <div>
+      <DiaryDateCalendar />
+    </div>
+  );
 };

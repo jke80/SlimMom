@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button {
+  margin-left: 48px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button svg {
+  fill: rgba(0, 0, 0, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button:hover svg,
+.button:focus svg {
+  fill: rgba(252, 132, 45, 1);
+}
+.menuContainer {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-color: rgba(38, 64, 97, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 60px;
+}
+.menuItemButton {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: Verdana;
+  letter-spacing: 0.04em;
+  font-size: 18px;
+  line-height: 21.88px;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border: none;
+
+  transition: color var(--page-transition);
+  &:hover,
+  &:focus {
+    color: var(--primery-font-color);
+  }
+}
+.active {
+  color: var(--primery-font-color);
+}

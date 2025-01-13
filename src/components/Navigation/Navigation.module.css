@@ -5,6 +5,17 @@
   justify-content: center;
   position: relative;
 }
+.navLink {
+  text-decoration: none;
+  color: var(--primery-font-color);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: Verdana;
+  color: rgba(33, 33, 33, 1);
+  line-height: 17.01px;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
 
 @media screen and (min-width: 1200px) {
   .navContainer {

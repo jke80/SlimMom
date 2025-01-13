@@ -1,3 +1,5 @@
+@import './modern-normalize.css';
+
 :root {
   --primary-font: 'Verdana', sans-serif;
   --accent-color: #fc842d;
@@ -23,19 +25,7 @@ h1 {
   text-decoration-skip-ink: none;
   color: rgba(33, 33, 33, 1);
 }
-a {
-  text-decoration: none;
-  color: var(--primery-font-color);
-  text-transform: uppercase;
-  font-weight: 700;
-  font-family: Verdana;
 
-  line-height: 17.01px;
-  letter-spacing: 0.04em;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-}
-.active {
-  color: rgba(33, 33, 33, 1);
+a.active {
+  color: var(--primery-font-color);
 }

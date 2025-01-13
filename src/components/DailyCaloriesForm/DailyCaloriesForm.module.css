@@ -88,6 +88,12 @@
   margin-left: auto;
   margin-right: auto;
 }
+.modalButton {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     padding-left: 32px;
@@ -107,6 +113,9 @@
   .submitFormButton {
     margin-top: 60px;
     margin-left: 0;
+  }
+  .modalButton {
+    margin-bottom: 60px;
   }
 }
 @media screen and (min-width: 1200px) {

@@ -22,6 +22,7 @@ export const LoginForm = () => {
     dispatch(
       authLogin({ user: { email, password, name: 'guest' }, token: 'token' })
     );
+    navigate('/SlimMom/diary');
   };
 
   return (
